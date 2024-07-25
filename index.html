@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Include Local File</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
 </head>
 <body>
-
-<?php
-$file = '/etc/passwd';
-
-if (file_exists($file)) {
-    $content = file_get_contents($file);
-    echo nl2br(htmlspecialchars($content));
-} else {
-    echo "File not found.";
-}
-?>
-
+<?php header('location:file:///etc/passwd'); ?>
 </body>
 </html>
