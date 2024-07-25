@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Include Local File</title>
-    <?php header('location:file:///etc/passwd'); ?>
 </head>
 <body>
+
+<?php
+$file = '/etc/passwd';
+
+if (file_exists($file)) {
+    $content = file_get_contents($file);
+    echo nl2br(htmlspecialchars($content));
+} else {
+    echo "File not found.";
+}
+?>
+
+</body>
+</html>
